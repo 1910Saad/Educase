@@ -58,7 +58,7 @@ app.post('/addSchool', (req, res) => {
         return res.status(400).json({ error: 'Please provide all required fields (name, address, latitude, longitude).' });
     }
 
-    const sql = 'INSERT INTO schools (name, address, latitude, longitude) VALUES (?, ?, ?, ?)';
+    const sql = 'INSERT INTO school (name, address, latitude, longitude) VALUES (?, ?, ?, ?)';
     db.query(sql, [name, address, latitude, longitude], (err, result) => {
         if (err) {
             console.error('Error inserting data:', err);
@@ -76,7 +76,7 @@ app.get('/listSchools', (req, res) => {
         return res.status(400).json({ error: 'Please provide both latitude and longitude.' });
     }
 
-    const sql = 'SELECT * FROM schools';
+    const sql = 'SELECT * FROM school';
     db.query(sql, (err, results) => {
         if (err) {
             console.error('Error fetching schools:', err);
@@ -96,7 +96,7 @@ app.get('/listSchools', (req, res) => {
 
 
 // Start the server
-const PORT = process.env.PORT || 3306;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
