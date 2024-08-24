@@ -52,7 +52,7 @@ const haversineDistance = (coords1, coords2) => {
 app.post('/addSchool', (req, res) => {
     console.log('Received data:', req.body);  // Log the received data
 
-    const { name, address, latitude, longitude } = req.body;
+    const { name, address, latitude, longitude } = req.query;
 
     if (!name || !address || latitude === undefined || longitude === undefined) {
         return res.status(400).json({ error: 'Please provide all required fields (name, address, latitude, longitude).' });
