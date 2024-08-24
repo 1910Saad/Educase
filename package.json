@@ -1,0 +1,19 @@
+{
+    "name": "school-management",
+    "version": "1.0.0",
+    "description": "Node.js APIs for managing school data",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js",
+        "dev": "nodemon app.js"
+    },
+    "dependencies": {
+        "dotenv": "^16.3.1",
+        "express": "^4.19.2",
+        "mysql": "^2.18.1",
+        "mysql2": "^3.11.0"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.4"
+    }
+}
