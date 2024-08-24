@@ -49,7 +49,7 @@ const haversineDistance = (coords1, coords2) => {
 };
 
 // Add School API
-app.post('/addSchool', (req, res) => {
+app.get('/addSchool', (req, res) => {
     console.log('Received data:', req.body);  // Log the received data
 
     const { name, address, latitude, longitude } = req.body;
